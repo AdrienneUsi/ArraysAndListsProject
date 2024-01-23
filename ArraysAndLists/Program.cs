@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraysAndLists
 {
@@ -8,37 +9,51 @@ namespace ArraysAndLists
         {
             //TODO:
 
-            // Create an int array and populate it with numbers 1-10
-            
+            // Create an int Array and populate numbers 1-10
+            var numbers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-            /* Create a list of type int
-             * Name the list "evens"
+            /* Create two Lists of type int.
+             * Name one List "evens"
+             * Name the other List "odds"
              */
 
-            
-            /* Create another list of type int
-             * Name the list "odds"
-             */
-            
+            var evens = new List<int>();
+            var odds = new List<int>();
 
-             /* Using either a foreach or for loop,
-             * iterate through the array you populated with 10 numbers.
-             * Inside the scope of the loop,
-             * check to see if each number in the array is even or odd.
-             * If the number is even, add it to the evens list.
-             * If the number is odd, add it to the odds list.
+            /* Using either a foreach or for loop,
+             * nest an if statement to check to see
+             *  if a number is even or odd.
+             * Then add those numbers to either the evens List
+             * or the odds List
              */
 
+            foreach (int num in numbers)
+            {
+                if (num % 2 == 0)
+                {
+                    evens.Add(num);
+                }
+                else
+                {
+                    odds.Add(num);
+                }
+            }
 
-
-            /* Using a foreach loop,
-             * display the numbers in your "evens" list
+            /* Now using foreach or for loops,
+             * display each List of even and odd numbers
+             *
+             * Try to be creative in your display
              */
-            
 
-            /* Using a for loop,
-             * display the numbers in your "odds" list
-             */
+            foreach (int num in evens)
+            {
+                Console.WriteLine($"{num} is even");
+            }
+
+            foreach (int num in odds)
+            {
+                Console.WriteLine($"{num} is odd");
+            }
         }
     }
 }
